@@ -1,12 +1,12 @@
+import Stripe from "stripe";
 import orderModel from "../model/orderModel.js";
 import userModel from "../model/userModel.js";
-import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 //placing order using frontend
 
 const placeOrder = async (req,res)=>{
-    const frontend_url ="http://localhost:5173"
+    const frontend_url ="https://foodstore-frontend.onrender.com"
     try {
         const newOrder = new orderModel({
             userId:req.body.userId,
@@ -100,4 +100,4 @@ const updateStatus = async(req,res)=>{
         res.json({success:false,message:"ERROR"})
     }
 }
-export {placeOrder,verifyOrder,userOrders,listOrders,updateStatus};
+export { listOrders, placeOrder, updateStatus, userOrders, verifyOrder };

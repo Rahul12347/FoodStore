@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
+import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 export const StoreContext = createContext(null);
-import axios from "axios"
 const StoreContextProvider = (props) => {
   const[cartItems,setCartItems]= useState({})
-  const url="http://localhost:4000";
+  const url="https://foodstore-a3z0.onrender.com";
   const[token,setToken]=useState("")
   const[food_list,Setfood_list]=useState([])
   const addToCart= async(itemId)=>{
