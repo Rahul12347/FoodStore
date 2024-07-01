@@ -5,7 +5,7 @@ import parcel_icon from './parcel_icon.png'
 import profile_image from './profile_image.png'
 import upload_area from './upload_area.png'
 
-export const url = "https://food-delivery-mernstack-main.onrender.com";
+export const url = "https://foodstore-a3z0.onrender.com";
 export const currency = '₹'
 
 export const assets ={

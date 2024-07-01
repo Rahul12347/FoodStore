@@ -1,10 +1,9 @@
-import React from 'react'
-import "./Order.css"
-import { useState } from 'react'
-import { toast } from 'react-toastify';
-import { useEffect } from 'react';
 import axios from "axios";
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { assets } from '../../assets/assets';
+import "./Order.css";
+// eslint-disable-next-line react/prop-types
 export const Order = ({url}) => {
   const [orders, setOrders] = useState([]);
   const fetchAllorders = async()=>{
@@ -40,8 +39,9 @@ export const Order = ({url}) => {
               <p className="order-food-item">
                 {order.items.map((item, index) => {
                   if (index === order.items.length - 1) {
-                    return item.name + " x " + item.quantit + ", ";
+                    return item.name + " x " + item.quantity;
                   } else {
+                         return item.name + " x" + item.quantity + ","
                   }
                 })}
               </p>
